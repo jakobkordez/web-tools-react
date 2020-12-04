@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+
 import { logoutUser } from '../store/user/actions';
 
 const Home: FunctionComponent = () => {
@@ -16,4 +17,4 @@ const Home: FunctionComponent = () => {
     );
 }
 
-export default Home;
+export default Home

@@ -1,9 +1,10 @@
 import { FunctionComponent } from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Home from './components/Home';
 import LoginForm from './components/LoginForm';
+import CustomRedirect from './components/CustomRedirect';
 import { RootState } from './store';
 
 import './App.css';
@@ -24,7 +25,7 @@ const App: FunctionComponent = () => {
                   <Home />
                 </Route>
                 <Route>
-                  <Redirect to="/" />
+                  <CustomRedirect fallback="/" />
                 </Route>
               </Switch>
             )
@@ -34,7 +35,7 @@ const App: FunctionComponent = () => {
                   <LoginForm />
                 </Route>
                 <Route>
-                  <Redirect to="/login" />
+                  <CustomRedirect fallback="/login" />
                 </Route>
               </Switch>
             )

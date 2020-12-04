@@ -1,12 +1,11 @@
 import { apiHeaders } from './api';
 
-const path: string = '/api/auth';
+const path: string = '/api/url'
 
-export const login = async (username: string, password: string): Promise<any> => {
+export const parseUrl = async (key: string): Promise<any> => {
     try {
-        const res = await fetch(`${path}/login`, {
-            method: 'POST',
-            body: JSON.stringify({ username, password }),
+        const res = await fetch(`${path}/${key}`, {
+            method: 'GET',
             headers: apiHeaders()
         });
 
@@ -19,4 +18,4 @@ export const login = async (username: string, password: string): Promise<any> =>
         console.error(e);
         throw Error('Something went wrong!');
     }
-};
+}

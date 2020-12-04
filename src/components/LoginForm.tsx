@@ -1,6 +1,7 @@
 import { FormEvent, FunctionComponent, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+
 import { login } from '../api/auth-api';
 import { loginUser } from '../store/user/actions';
 
@@ -20,7 +21,7 @@ const LoginForm: FunctionComponent = () => {
         setError('');
         setIsLoading(true);
         const loginData = await login(username, password).catch((er) => {
-            setError(er);
+            setError(er.message || er);
             return null;
         });
         if (loginData) dispatch(loginUser({ ...loginData }));
