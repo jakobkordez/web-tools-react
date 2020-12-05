@@ -1,10 +1,12 @@
-import { FunctionComponent } from 'react';
-import { Async } from 'react-async';
-import { Redirect } from 'react-router-dom';
+import { FunctionComponent } from 'react'
+import { Async } from 'react-async'
+import { Redirect } from 'react-router-dom'
 
-import { parseUrl } from '../api/url-api';
+import { parseUrl } from '../api/url-api'
+import Loading from './Loading'
+import NotFound from './NotFound'
 
-const CustomRedirect: FunctionComponent<{ fallback: string }> = (props) => {
+const CustomRedirect: FunctionComponent<{ fallback?: string }> = (props) => {
 
     const findRedirect = async (): Promise<string> => {
         const path = window.location.pathname;
@@ -22,13 +24,15 @@ const CustomRedirect: FunctionComponent<{ fallback: string }> = (props) => {
         <Async promiseFn={findRedirect}>
             {
                 ({ data, error, isPending }) => {
-                    if (isPending) return <h3>Please wait...</h3>
-                    if (error || !data) return <Redirect to={props.fallback} />
+                    if (isPending) return <Loading />
+                    if (error || !data)
+                        if (props.fallback) return <Redirect to={props.fallback} />
+                        else return <NotFound />
                     window.location.replace(data);
                 }
             }
         </Async>
-    );
+    )
 }
 
 export default CustomRedirect

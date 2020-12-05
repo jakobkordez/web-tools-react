@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import { systemReducer } from './system/reducers';
-import { userReducer } from './user/reducers';
+import { systemReducer } from './system/reducers'
+import { userReducer } from './user/reducers'
 
 export const rootReducer = combineReducers({
     system: systemReducer,

@@ -1,4 +1,4 @@
-import { apiHeaders } from './api';
+import { apiHeaders } from './api'
 
 const path: string = '/api/url'
 

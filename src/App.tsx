@@ -1,13 +1,13 @@
-import { FunctionComponent } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { FunctionComponent } from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-import Home from './components/Home';
-import LoginForm from './components/LoginForm';
-import CustomRedirect from './components/CustomRedirect';
-import { RootState } from './store';
+import Home from './components/Home'
+import LoginForm from './components/LoginForm'
+import CustomRedirect from './components/CustomRedirect'
+import { RootState } from './store'
 
-import './App.css';
+import './App.css'
 
 const selectisLoggedIn = (state: RootState) => state.user != null;
 
@@ -25,7 +25,7 @@ const App: FunctionComponent = () => {
                   <Home />
                 </Route>
                 <Route>
-                  <CustomRedirect fallback="/" />
+                  <CustomRedirect />
                 </Route>
               </Switch>
             )

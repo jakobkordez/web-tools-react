@@ -9,4 +9,4 @@ module.exports = function(app) {
             pathRewrite: (path) => path.substring(4),
         })
     );
-};
+}

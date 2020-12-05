@@ -1,4 +1,4 @@
-import { LOGIN, LoginData, LOGOUT, UserActionTypes } from './types';
+import { LOGIN, LoginData, LOGOUT, UserActionTypes } from './types'
 
 export function loginUser(loginData: LoginData): UserActionTypes {
     return {

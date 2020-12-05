@@ -1,6 +1,6 @@
-import { apiHeaders } from './api';
+import { apiHeaders } from './api'
 
-const path: string = '/api/auth';
+const path: string = '/api/auth'
 
 export const login = async (username: string, password: string): Promise<any> => {
     try {
@@ -19,4 +19,4 @@ export const login = async (username: string, password: string): Promise<any> =>
         console.error(e);
         throw Error('Something went wrong!');
     }
-};
+}

@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 // Styles
-// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import '@forevolve/bootstrap-dark/dist/css/bootstrap-dark.min.css'
-import './index.css';
+import './index.css'
 
-import { rootReducer } from './store';
-import App from './App';
+import { rootReducer } from './store'
+import App from './App'
 
-const store = createStore(rootReducer, {});
+const store = createStore(rootReducer, {})
 
 console.log(store.getState());
 
@@ -22,4 +22,4 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
